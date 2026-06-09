@@ -1,141 +1,209 @@
+/* ===========================
+   SADAM VOX GOLD BACKGROUND
+   =========================== */
+
 *{
-margin:0;
-padding:0;
-box-sizing:border-box;
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html,
+body{
+    width:100%;
+    min-height:100vh;
+    overflow-x:hidden;
+    background:#020202;
+    font-family:Arial,sans-serif;
 }
 
 body{
-
-background:#050505;
-
-font-family:Tahoma,sans-serif;
-
-min-height:100vh;
-
-overflow:hidden;
-
-color:white;
+    position:relative;
+    background:
+    radial-gradient(circle at 20% 30%,rgba(255,190,60,.08),transparent 25%),
+    radial-gradient(circle at 80% 70%,rgba(255,190,60,.05),transparent 30%),
+    #020202;
 }
 
-/* ==========================
-GOLD FRAME
-========================== */
+/* ===========================
+   GOLD PARTICLES
+   =========================== */
 
-.gold-frame{
+body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+    pointer-events:none;
 
-position:relative;
+    background-image:
+    radial-gradient(#ffcc66 1px,transparent 1px),
+    radial-gradient(#ffb300 1px,transparent 1px),
+    radial-gradient(#ffd77a 2px,transparent 2px);
 
-width:100vw;
-height:100vh;
+    background-size:
+    220px 220px,
+    320px 320px,
+    420px 420px;
 
-border:2px solid #c89b3c;
+    opacity:.35;
 
-box-shadow:
-0 0 20px rgba(200,155,60,.4),
-inset 0 0 20px rgba(200,155,60,.15);
+    animation:
+    starsMove 30s linear infinite;
 }
 
-/* ==========================
-HERO
-========================== */
+@keyframes starsMove{
 
-.hero{
+    from{
+        transform:translateY(0);
+    }
 
-position:absolute;
-
-top:50%;
-left:50%;
-
-transform:
-translate(-50%,-50%);
-
-text-align:center;
-
-z-index:10;
+    to{
+        transform:translateY(-120px);
+    }
 }
 
-.hero h1{
+/* ===========================
+   MAIN GOLD WAVES
+   =========================== */
 
-font-size:clamp(50px,8vw,120px);
+body::after{
 
-letter-spacing:8px;
+    content:"";
 
-color:#e3bc66;
+    position:fixed;
+    inset:0;
 
-text-shadow:
-0 0 10px rgba(227,188,102,.6),
-0 0 30px rgba(227,188,102,.3);
+    pointer-events:none;
+
+    background:
+
+    radial-gradient(
+    ellipse at 25% 70%,
+    rgba(255,180,50,.55),
+    transparent 35%
+    ),
+
+    radial-gradient(
+    ellipse at 70% 25%,
+    rgba(255,180,50,.50),
+    transparent 35%
+    ),
+
+    radial-gradient(
+    ellipse at 75% 75%,
+    rgba(255,180,50,.45),
+    transparent 30%
+    );
+
+    filter:
+    blur(60px);
+
+    mix-blend-mode:screen;
+
+    opacity:.7;
+
+    animation:
+    waveFloat 12s ease-in-out infinite alternate;
 }
 
-.hero p{
+@keyframes waveFloat{
 
-margin-top:15px;
+    0%{
+        transform:
+        translateY(0px)
+        rotate(0deg);
+    }
 
-letter-spacing:4px;
-
-font-size:clamp(12px,2vw,20px);
-
-color:#d4b06b;
+    100%{
+        transform:
+        translateY(-40px)
+        rotate(2deg);
+    }
 }
 
-/* ==========================
-WAVES
-========================== */
+/* ===========================
+   MUSIC NOTES
+   =========================== */
 
-.background-layer{
+.music-note{
 
-position:absolute;
-inset:0;
+    position:fixed;
 
-overflow:hidden;
+    color:#d9a441;
+
+    text-shadow:
+    0 0 10px #d9a441,
+    0 0 20px #d9a441,
+    0 0 40px #d9a441;
+
+    z-index:1;
+
+    opacity:.7;
+
+    animation:
+    floatNote 10s ease-in-out infinite;
 }
 
-.wave{
-
-position:absolute;
-
-width:140%;
-
-height:2px;
-
-background:
-linear-gradient(
-90deg,
-transparent,
-#d8a84a,
-transparent);
-
-filter:blur(2px);
-
-opacity:.25;
+.note1{
+    top:12%;
+    left:12%;
+    font-size:40px;
 }
 
-.wave1{
-
-top:25%;
-
-left:-20%;
-
-transform:
-rotate(10deg);
+.note2{
+    top:25%;
+    right:18%;
+    font-size:55px;
 }
 
-.wave2{
-
-top:50%;
-
-left:-15%;
-
-transform:
-rotate(-7deg);
+.note3{
+    bottom:18%;
+    left:30%;
+    font-size:60px;
 }
 
-.wave3{
+.note4{
+    top:65%;
+    right:25%;
+    font-size:45px;
+}
 
-top:75%;
+.note5{
+    bottom:10%;
+    right:10%;
+    font-size:35px;
+}
 
-left:-20%;
+@keyframes floatNote{
 
-transform:
-rotate(8deg);
+    0%{
+        transform:
+        translateY(0px)
+        rotate(0deg);
+    }
+
+    50%{
+        transform:
+        translateY(-25px)
+        rotate(8deg);
+    }
+
+    100%{
+        transform:
+        translateY(0px)
+        rotate(0deg);
+    }
+}
+
+/* ===========================
+   RESPONSIVE
+   =========================== */
+
+@media(max-width:768px){
+
+    .music-note{
+
+        transform:scale(.8);
+    }
+
 }
