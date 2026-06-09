@@ -1,5 +1,1 @@
-document.addEventListener("DOMContentLoaded",()=>{
-
-console.log("SADAM VOX Loaded");
-
-});
+console.log("SADAM VOX FOUNDATION LOADED");
