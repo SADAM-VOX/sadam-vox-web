@@ -1,4 +1,7 @@
-```css
+/* =================================
+   SADAM VOX - GOLD MUSIC BACKGROUND
+   ================================= */
+
 *{
 margin:0;
 padding:0;
@@ -13,6 +16,15 @@ overflow:hidden;
 background:#000;
 }
 
+body{
+position:relative;
+background:#000;
+}
+
+/* =================================
+   MAIN CONTAINER
+   ================================= */
+
 .gold-frame{
 position:relative;
 width:100%;
@@ -21,7 +33,15 @@ overflow:hidden;
 background:#000;
 }
 
-/* نجوم ذهبية صغيرة */
+.background-layer{
+position:absolute;
+inset:0;
+overflow:hidden;
+}
+
+/* =================================
+   GOLD DUST
+   ================================= */
 
 body::before{
 content:"";
@@ -29,128 +49,270 @@ position:absolute;
 inset:0;
 
 background-image:
-radial-gradient(#ffd36b 1px,transparent 1px),
-radial-gradient(#ffbf40 2px,transparent 2px),
-radial-gradient(#ffd36b 1px,transparent 1px);
+radial-gradient(#ffd56d 1px,transparent 1px),
+radial-gradient(#c99226 2px,transparent 2px),
+radial-gradient(#ffe08f 1px,transparent 1px);
 
 background-size:
-120px 120px,
-260px 260px,
-400px 400px;
+160px 160px,
+280px 280px,
+420px 420px;
 
-opacity:.55;
+opacity:.35;
+
+animation:dustMove 30s linear infinite;
+
 pointer-events:none;
 }
 
-/* طبقة الخلفية */
+@keyframes dustMove{
+from{
+transform:translateY(0);
+}
+to{
+transform:translateY(-120px);
+}
+}
 
-.background-layer{
+/* =================================
+   GOLD FLOW 1
+   ================================= */
+
+.wave1{
+position:absolute;
+width:180%;
+height:500px;
+
+top:5%;
+left:-40%;
+
+border-radius:50%;
+
+border:3px solid rgba(255,204,90,.9);
+
+filter:
+blur(8px)
+drop-shadow(0 0 20px #ffbf47)
+drop-shadow(0 0 40px #ffbf47);
+
+transform:rotate(15deg);
+opacity:.8;
+}
+
+/* =================================
+   GOLD FLOW 2
+   ================================= */
+
+.wave2{
+position:absolute;
+width:170%;
+height:550px;
+
+top:35%;
+left:-35%;
+
+border-radius:50%;
+
+border:3px solid rgba(255,185,60,.85);
+
+filter:
+blur(8px)
+drop-shadow(0 0 20px #ffbf47)
+drop-shadow(0 0 40px #ffbf47);
+
+transform:rotate(-12deg);
+
+opacity:.7;
+}
+
+/* =================================
+   GOLD FLOW 3
+   ================================= */
+
+.wave3{
+position:absolute;
+width:180%;
+height:600px;
+
+bottom:-10%;
+left:-30%;
+
+border-radius:50%;
+
+border:3px solid rgba(255,210,100,.85);
+
+filter:
+blur(8px)
+drop-shadow(0 0 20px #ffcf63)
+drop-shadow(0 0 50px #ffcf63);
+
+transform:rotate(12deg);
+
+opacity:.75;
+}
+
+/* =================================
+   GOLD GLOW CLOUDS
+   ================================= */
+
+.background-layer::before{
+content:"";
+
 position:absolute;
 inset:0;
-overflow:hidden;
-}
-
-/* الخيوط الذهبية */
-
-.stream{
-position:absolute;
-height:3px;
-border-radius:999px;
 
 background:
-linear-gradient(
-90deg,
-transparent,
-#ffd36b,
-#ffb52a,
-#ffd36b,
-transparent
-);
 
-box-shadow:
-0 0 10px #ffcb63,
-0 0 25px #ffcb63,
-0 0 45px rgba(255,180,40,.8);
+radial-gradient(circle at 20% 35%,
+rgba(255,190,60,.12),
+transparent 30%),
 
-opacity:.95;
+radial-gradient(circle at 70% 30%,
+rgba(255,190,60,.10),
+transparent 35%),
+
+radial-gradient(circle at 60% 75%,
+rgba(255,190,60,.08),
+transparent 30%);
+
+filter:blur(80px);
 }
 
-/* 12 مسار */
-
-.s1{width:140%;top:8%;left:-20%;transform:rotate(18deg);}
-.s2{width:130%;top:15%;left:-10%;transform:rotate(-10deg);}
-.s3{width:120%;top:23%;left:20%;transform:rotate(22deg);}
-.s4{width:150%;top:33%;left:-25%;transform:rotate(-20deg);}
-.s5{width:120%;top:40%;left:10%;transform:rotate(16deg);}
-.s6{width:140%;top:48%;left:-15%;transform:rotate(-16deg);}
-.s7{width:130%;top:56%;left:-5%;transform:rotate(20deg);}
-.s8{width:120%;top:64%;left:15%;transform:rotate(-20deg);}
-.s9{width:130%;top:72%;left:-10%;transform:rotate(14deg);}
-.s10{width:120%;top:80%;left:10%;transform:rotate(-12deg);}
-.s11{width:100%;top:28%;left:35%;transform:rotate(35deg);}
-.s12{width:100%;top:58%;left:25%;transform:rotate(-35deg);}
-
-/* النوتات */
+/* =================================
+   MUSIC NOTES
+   ================================= */
 
 .music-note{
 position:absolute;
-color:#e0ae45;
+
+color:#e2b14a;
 
 text-shadow:
-0 0 10px #ffd36b,
-0 0 20px #ffd36b,
-0 0 40px #ffd36b;
+0 0 10px #ffcf63,
+0 0 20px #ffcf63,
+0 0 50px #ffcf63;
 
 animation:floatNote 8s ease-in-out infinite;
 }
 
-.note1{top:12%;left:10%;font-size:70px;}
-.note2{top:20%;right:12%;font-size:60px;}
-.note3{top:40%;left:25%;font-size:85px;}
-.note4{top:52%;right:22%;font-size:60px;}
-.note5{bottom:10%;right:10%;font-size:55px;}
-.note6{bottom:20%;left:20%;font-size:80px;}
-.note7{top:72%;left:60%;font-size:50px;}
-
-@keyframes floatNote{
-0%{transform:translateY(0);}
-50%{transform:translateY(-20px);}
-100%{transform:translateY(0);}
+.note1{
+top:20%;
+left:10%;
+font-size:70px;
 }
 
-/* الجسيمات */
+.note2{
+top:22%;
+right:15%;
+font-size:70px;
+}
+
+.note3{
+bottom:18%;
+left:28%;
+font-size:80px;
+}
+
+.note4{
+top:55%;
+right:22%;
+font-size:60px;
+}
+
+.note5{
+bottom:10%;
+right:12%;
+font-size:55px;
+}
+
+@keyframes floatNote{
+
+0%{
+transform:translateY(0);
+}
+
+50%{
+transform:translateY(-20px);
+}
+
+100%{
+transform:translateY(0);
+}
+}
+
+/* =================================
+   PARTICLES
+   ================================= */
 
 .particle{
 position:absolute;
 border-radius:50%;
-background:#ffd36b;
+
+background:#ffd56d;
 
 box-shadow:
-0 0 10px #ffd36b,
-0 0 20px #ffd36b,
-0 0 35px #ffd36b;
+0 0 10px #ffd56d,
+0 0 20px #ffd56d,
+0 0 40px #ffd56d;
 }
 
-.p1{width:8px;height:8px;top:12%;left:22%;}
-.p2{width:10px;height:10px;top:22%;right:20%;}
-.p3{width:6px;height:6px;top:35%;left:40%;}
-.p4{width:9px;height:9px;top:50%;right:18%;}
-.p5{width:8px;height:8px;top:65%;left:15%;}
-.p6{width:10px;height:10px;top:72%;right:30%;}
-.p7{width:8px;height:8px;bottom:18%;left:42%;}
-.p8{width:10px;height:10px;bottom:10%;right:18%;}
-.p9{width:7px;height:7px;top:18%;left:70%;}
-.p10{width:8px;height:8px;top:80%;left:70%;}
-
-@media(max-width:768px){
-
-.stream{
-height:2px;
+.p1{
+width:12px;
+height:12px;
+top:15%;
+left:20%;
 }
 
-.music-note{
-transform:scale(.8);
+.p2{
+width:12px;
+height:12px;
+top:30%;
+right:22%;
 }
 
+.p3{
+width:10px;
+height:10px;
+top:60%;
+left:15%;
 }
-```
+
+.p4{
+width:12px;
+height:12px;
+bottom:18%;
+left:42%;
+}
+
+.p5{
+width:12px;
+height:12px;
+bottom:22%;
+right:18%;
+}
+
+.p6{
+width:10px;
+height:10px;
+top:72%;
+right:30%;
+}
+
+/* =================================
+   DESKTOP
+   ================================= */
+
+@media(min-width:1200px){
+
+.note1{font-size:120px;}
+.note2{font-size:120px;}
+.note3{font-size:130px;}
+.note4{font-size:110px;}
+.note5{font-size:90px;}
+
+.wave1,
+.wave2,
+.wave3{
+border-width:4px;
+}
+}
