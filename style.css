@@ -1,7 +1,3 @@
-/* ==========================
-   SADAM VOX GOLD ENERGY BG
-   ========================== */
-
 *{
 margin:0;
 padding:0;
@@ -11,352 +7,174 @@ box-sizing:border-box;
 html,
 body{
 width:100%;
-min-height:100vh;
-overflow-x:hidden;
+height:100%;
+overflow:hidden;
 background:#000;
+font-family:Arial,sans-serif;
 }
 
 body{
-position:relative;
-background:#000;
+background:
+radial-gradient(circle at center,#070707 0%,#000 100%);
 }
-
-/* ==========================
-   MAIN CANVAS
-   ========================== */
 
 .gold-frame{
 position:relative;
 width:100%;
-min-height:100vh;
+height:100vh;
 overflow:hidden;
-background:#000;
 }
 
-/* ==========================
-   GOLD DUST
-   ========================== */
+/* GOLD DUST */
 
 body::before{
 content:"";
 position:fixed;
 inset:0;
-pointer-events:none;
 
 background-image:
-radial-gradient(#f8cf68 1px,transparent 1px),
-radial-gradient(#d89d2b 2px,transparent 2px),
-radial-gradient(#ffd977 1px,transparent 1px);
+radial-gradient(#f4c86a 1px,transparent 1px),
+radial-gradient(#d8a63c 1px,transparent 1px),
+radial-gradient(#ffd87a 2px,transparent 2px);
 
 background-size:
-180px 180px,
-320px 320px,
-500px 500px;
+140px 140px,
+260px 260px,
+380px 380px;
 
-opacity:.55;
-
-animation:
-dustMove 35s linear infinite;
+opacity:.45;
+pointer-events:none;
 }
 
-@keyframes dustMove{
-
-0%{
-transform:translateY(0);
-}
-
-100%{
-transform:translateY(-200px);
-}
-}
-
-/* ==========================
-   GOLD ENERGY STREAMS
-   ========================== */
-
-.background-layer{
-position:absolute;
-inset:0;
-overflow:hidden;
-}
-
-/* STREAM 1 */
-
-.wave1{
-position:absolute;
-width:180%;
-height:220px;
-
-top:10%;
-left:-40%;
-
-border-radius:50%;
-
-background:
-linear-gradient(
-90deg,
-transparent,
-rgba(255,193,67,.9),
-transparent
-);
-
-filter:
-blur(12px);
-
-transform:
-rotate(18deg);
-
-opacity:.9;
-}
-
-/* STREAM 2 */
-
-.wave2{
-position:absolute;
-width:170%;
-height:220px;
-
-top:42%;
-left:-30%;
-
-border-radius:50%;
-
-background:
-linear-gradient(
-90deg,
-transparent,
-rgba(255,180,40,.95),
-transparent
-);
-
-filter:
-blur(14px);
-
-transform:
-rotate(-12deg);
-
-opacity:.8;
-}
-
-/* STREAM 3 */
-
-.wave3{
-position:absolute;
-width:180%;
-height:220px;
-
-bottom:6%;
-left:-35%;
-
-border-radius:50%;
-
-background:
-linear-gradient(
-90deg,
-transparent,
-rgba(255,200,90,.85),
-transparent
-);
-
-filter:
-blur(13px);
-
-transform:
-rotate(15deg);
-
-opacity:.8;
-}
-
-/* ==========================
-   EXTRA ENERGY LINES
-   ========================== */
+/* BACKGROUND GLOW */
 
 .background-layer::before{
 content:"";
 
 position:absolute;
-
 inset:0;
 
 background:
 
 radial-gradient(
-ellipse at 20% 30%,
-rgba(255,180,50,.35),
-transparent 40%
+circle at 20% 25%,
+rgba(255,180,40,.15),
+transparent 15%
 ),
 
 radial-gradient(
-ellipse at 70% 25%,
-rgba(255,180,50,.25),
-transparent 35%
+circle at 75% 20%,
+rgba(255,180,40,.15),
+transparent 15%
 ),
 
 radial-gradient(
-ellipse at 60% 70%,
-rgba(255,180,50,.28),
-transparent 35%
+circle at 60% 75%,
+rgba(255,180,40,.18),
+transparent 20%
+),
+
+radial-gradient(
+circle at 30% 80%,
+rgba(255,180,40,.12),
+transparent 15%
 );
 
-filter:blur(80px);
+filter:blur(30px);
 }
 
-/* ==========================
-   MUSIC NOTES
-   ========================== */
+/* STREAMS */
+
+.stream{
+position:absolute;
+height:2px;
+
+background:
+linear-gradient(
+90deg,
+transparent,
+#ffd87a,
+#ffb22c,
+#ffd87a,
+transparent
+);
+
+box-shadow:
+0 0 8px #ffcb63,
+0 0 18px #ffcb63,
+0 0 30px rgba(255,190,60,.8);
+
+border-radius:50px;
+opacity:.95;
+}
+
+.s1{width:60%;top:10%;left:-5%;transform:rotate(18deg);}
+.s2{width:45%;top:16%;left:30%;transform:rotate(-15deg);}
+.s3{width:55%;top:25%;right:-5%;transform:rotate(20deg);}
+.s4{width:65%;top:35%;left:-10%;transform:rotate(-22deg);}
+.s5{width:55%;top:42%;left:20%;transform:rotate(12deg);}
+.s6{width:60%;top:50%;right:-10%;transform:rotate(-18deg);}
+.s7{width:50%;top:58%;left:5%;transform:rotate(24deg);}
+.s8{width:55%;top:65%;right:0%;transform:rotate(-20deg);}
+.s9{width:45%;top:72%;left:15%;transform:rotate(18deg);}
+.s10{width:55%;top:80%;right:5%;transform:rotate(-15deg);}
+.s11{width:35%;top:30%;left:45%;transform:rotate(35deg);}
+.s12{width:35%;top:60%;left:40%;transform:rotate(-35deg);}
+
+/* MUSIC NOTES */
 
 .music-note{
 position:absolute;
-
 color:#d7a33c;
 
 text-shadow:
-0 0 8px #ffcb63,
-0 0 18px #ffcb63,
-0 0 30px #ffcb63;
+0 0 10px #ffcb63,
+0 0 20px #ffcb63,
+0 0 35px #ffcb63;
 
-animation:
-floatNote 7s ease-in-out infinite;
+opacity:.75;
 }
 
-.note1{
-top:18%;
-left:12%;
-font-size:80px;
-}
+.note1{top:12%;left:10%;font-size:70px;}
+.note2{top:18%;right:12%;font-size:55px;}
+.note3{top:38%;left:25%;font-size:80px;}
+.note4{top:52%;right:25%;font-size:60px;}
+.note5{bottom:18%;left:18%;font-size:70px;}
+.note6{bottom:12%;right:12%;font-size:55px;}
+.note7{top:72%;left:60%;font-size:50px;}
 
-.note2{
-top:20%;
-right:15%;
-font-size:70px;
-}
-
-.note3{
-bottom:20%;
-left:30%;
-font-size:90px;
-}
-
-.note4{
-top:48%;
-right:25%;
-font-size:70px;
-}
-
-.note5{
-bottom:10%;
-right:12%;
-font-size:55px;
-}
-
-@keyframes floatNote{
-
-0%{
-transform:translateY(0px);
-}
-
-50%{
-transform:translateY(-25px);
-}
-
-100%{
-transform:translateY(0px);
-}
-}
-
-/* ==========================
-   GOLD PARTICLES
-   ========================== */
+/* PARTICLES */
 
 .particle{
 position:absolute;
 border-radius:50%;
-
-background:#ffcf69;
+background:#ffd87a;
 
 box-shadow:
-0 0 10px #ffcf69,
-0 0 20px #ffcf69,
-0 0 40px #ffcf69;
+0 0 10px #ffd87a,
+0 0 20px #ffd87a,
+0 0 40px #ffd87a;
 }
 
-.p1{
-width:10px;
-height:10px;
-top:12%;
-left:20%;
+.p1{width:6px;height:6px;top:10%;left:20%;}
+.p2{width:8px;height:8px;top:20%;right:20%;}
+.p3{width:5px;height:5px;top:35%;left:40%;}
+.p4{width:7px;height:7px;top:48%;right:15%;}
+.p5{width:5px;height:5px;top:60%;left:15%;}
+.p6{width:8px;height:8px;top:70%;right:35%;}
+.p7{width:6px;height:6px;top:80%;left:30%;}
+.p8{width:7px;height:7px;top:25%;left:70%;}
+.p9{width:5px;height:5px;top:55%;left:60%;}
+.p10{width:8px;height:8px;bottom:15%;right:15%;}
+
+@media(max-width:768px){
+
+.music-note{
+transform:scale(.8);
 }
 
-.p2{
-width:12px;
-height:12px;
-top:28%;
-right:22%;
+.stream{
+opacity:.8;
 }
 
-.p3{
-width:8px;
-height:8px;
-top:55%;
-left:18%;
-}
-
-.p4{
-width:12px;
-height:12px;
-bottom:25%;
-left:40%;
-}
-
-.p5{
-width:10px;
-height:10px;
-bottom:18%;
-right:18%;
-}
-
-.p6{
-width:8px;
-height:8px;
-top:70%;
-right:32%;
-}
-
-/* ==========================
-   DESKTOP
-   ========================== */
-
-@media(min-width:1200px){
-
-.wave1{
-height:260px;
-}
-
-.wave2{
-height:260px;
-}
-
-.wave3{
-height:260px;
-}
-
-.note1{
-font-size:120px;
-}
-
-.note2{
-font-size:110px;
-}
-
-.note3{
-font-size:120px;
-}
-
-.note4{
-font-size:100px;
-}
-
-.note5{
-font-size:80px;
-}
 }
