@@ -1,3 +1,4 @@
+```css
 *{
 margin:0;
 padding:0;
@@ -10,12 +11,6 @@ width:100%;
 height:100%;
 overflow:hidden;
 background:#000;
-font-family:Arial,sans-serif;
-}
-
-body{
-background:
-radial-gradient(circle at center,#070707 0%,#000 100%);
 }
 
 .gold-frame{
@@ -23,158 +18,139 @@ position:relative;
 width:100%;
 height:100vh;
 overflow:hidden;
+background:#000;
 }
 
-/* GOLD DUST */
+/* نجوم ذهبية صغيرة */
 
 body::before{
 content:"";
-position:fixed;
+position:absolute;
 inset:0;
 
 background-image:
-radial-gradient(#f4c86a 1px,transparent 1px),
-radial-gradient(#d8a63c 1px,transparent 1px),
-radial-gradient(#ffd87a 2px,transparent 2px);
+radial-gradient(#ffd36b 1px,transparent 1px),
+radial-gradient(#ffbf40 2px,transparent 2px),
+radial-gradient(#ffd36b 1px,transparent 1px);
 
 background-size:
-140px 140px,
+120px 120px,
 260px 260px,
-380px 380px;
+400px 400px;
 
-opacity:.45;
+opacity:.55;
 pointer-events:none;
 }
 
-/* BACKGROUND GLOW */
+/* طبقة الخلفية */
 
-.background-layer::before{
-content:"";
-
+.background-layer{
 position:absolute;
 inset:0;
-
-background:
-
-radial-gradient(
-circle at 20% 25%,
-rgba(255,180,40,.15),
-transparent 15%
-),
-
-radial-gradient(
-circle at 75% 20%,
-rgba(255,180,40,.15),
-transparent 15%
-),
-
-radial-gradient(
-circle at 60% 75%,
-rgba(255,180,40,.18),
-transparent 20%
-),
-
-radial-gradient(
-circle at 30% 80%,
-rgba(255,180,40,.12),
-transparent 15%
-);
-
-filter:blur(30px);
+overflow:hidden;
 }
 
-/* STREAMS */
+/* الخيوط الذهبية */
 
 .stream{
 position:absolute;
-height:2px;
+height:3px;
+border-radius:999px;
 
 background:
 linear-gradient(
 90deg,
 transparent,
-#ffd87a,
-#ffb22c,
-#ffd87a,
+#ffd36b,
+#ffb52a,
+#ffd36b,
 transparent
 );
 
 box-shadow:
-0 0 8px #ffcb63,
-0 0 18px #ffcb63,
-0 0 30px rgba(255,190,60,.8);
+0 0 10px #ffcb63,
+0 0 25px #ffcb63,
+0 0 45px rgba(255,180,40,.8);
 
-border-radius:50px;
 opacity:.95;
 }
 
-.s1{width:60%;top:10%;left:-5%;transform:rotate(18deg);}
-.s2{width:45%;top:16%;left:30%;transform:rotate(-15deg);}
-.s3{width:55%;top:25%;right:-5%;transform:rotate(20deg);}
-.s4{width:65%;top:35%;left:-10%;transform:rotate(-22deg);}
-.s5{width:55%;top:42%;left:20%;transform:rotate(12deg);}
-.s6{width:60%;top:50%;right:-10%;transform:rotate(-18deg);}
-.s7{width:50%;top:58%;left:5%;transform:rotate(24deg);}
-.s8{width:55%;top:65%;right:0%;transform:rotate(-20deg);}
-.s9{width:45%;top:72%;left:15%;transform:rotate(18deg);}
-.s10{width:55%;top:80%;right:5%;transform:rotate(-15deg);}
-.s11{width:35%;top:30%;left:45%;transform:rotate(35deg);}
-.s12{width:35%;top:60%;left:40%;transform:rotate(-35deg);}
+/* 12 مسار */
 
-/* MUSIC NOTES */
+.s1{width:140%;top:8%;left:-20%;transform:rotate(18deg);}
+.s2{width:130%;top:15%;left:-10%;transform:rotate(-10deg);}
+.s3{width:120%;top:23%;left:20%;transform:rotate(22deg);}
+.s4{width:150%;top:33%;left:-25%;transform:rotate(-20deg);}
+.s5{width:120%;top:40%;left:10%;transform:rotate(16deg);}
+.s6{width:140%;top:48%;left:-15%;transform:rotate(-16deg);}
+.s7{width:130%;top:56%;left:-5%;transform:rotate(20deg);}
+.s8{width:120%;top:64%;left:15%;transform:rotate(-20deg);}
+.s9{width:130%;top:72%;left:-10%;transform:rotate(14deg);}
+.s10{width:120%;top:80%;left:10%;transform:rotate(-12deg);}
+.s11{width:100%;top:28%;left:35%;transform:rotate(35deg);}
+.s12{width:100%;top:58%;left:25%;transform:rotate(-35deg);}
+
+/* النوتات */
 
 .music-note{
 position:absolute;
-color:#d7a33c;
+color:#e0ae45;
 
 text-shadow:
-0 0 10px #ffcb63,
-0 0 20px #ffcb63,
-0 0 35px #ffcb63;
+0 0 10px #ffd36b,
+0 0 20px #ffd36b,
+0 0 40px #ffd36b;
 
-opacity:.75;
+animation:floatNote 8s ease-in-out infinite;
 }
 
 .note1{top:12%;left:10%;font-size:70px;}
-.note2{top:18%;right:12%;font-size:55px;}
-.note3{top:38%;left:25%;font-size:80px;}
-.note4{top:52%;right:25%;font-size:60px;}
-.note5{bottom:18%;left:18%;font-size:70px;}
-.note6{bottom:12%;right:12%;font-size:55px;}
+.note2{top:20%;right:12%;font-size:60px;}
+.note3{top:40%;left:25%;font-size:85px;}
+.note4{top:52%;right:22%;font-size:60px;}
+.note5{bottom:10%;right:10%;font-size:55px;}
+.note6{bottom:20%;left:20%;font-size:80px;}
 .note7{top:72%;left:60%;font-size:50px;}
 
-/* PARTICLES */
+@keyframes floatNote{
+0%{transform:translateY(0);}
+50%{transform:translateY(-20px);}
+100%{transform:translateY(0);}
+}
+
+/* الجسيمات */
 
 .particle{
 position:absolute;
 border-radius:50%;
-background:#ffd87a;
+background:#ffd36b;
 
 box-shadow:
-0 0 10px #ffd87a,
-0 0 20px #ffd87a,
-0 0 40px #ffd87a;
+0 0 10px #ffd36b,
+0 0 20px #ffd36b,
+0 0 35px #ffd36b;
 }
 
-.p1{width:6px;height:6px;top:10%;left:20%;}
-.p2{width:8px;height:8px;top:20%;right:20%;}
-.p3{width:5px;height:5px;top:35%;left:40%;}
-.p4{width:7px;height:7px;top:48%;right:15%;}
-.p5{width:5px;height:5px;top:60%;left:15%;}
-.p6{width:8px;height:8px;top:70%;right:35%;}
-.p7{width:6px;height:6px;top:80%;left:30%;}
-.p8{width:7px;height:7px;top:25%;left:70%;}
-.p9{width:5px;height:5px;top:55%;left:60%;}
-.p10{width:8px;height:8px;bottom:15%;right:15%;}
+.p1{width:8px;height:8px;top:12%;left:22%;}
+.p2{width:10px;height:10px;top:22%;right:20%;}
+.p3{width:6px;height:6px;top:35%;left:40%;}
+.p4{width:9px;height:9px;top:50%;right:18%;}
+.p5{width:8px;height:8px;top:65%;left:15%;}
+.p6{width:10px;height:10px;top:72%;right:30%;}
+.p7{width:8px;height:8px;bottom:18%;left:42%;}
+.p8{width:10px;height:10px;bottom:10%;right:18%;}
+.p9{width:7px;height:7px;top:18%;left:70%;}
+.p10{width:8px;height:8px;top:80%;left:70%;}
 
 @media(max-width:768px){
+
+.stream{
+height:2px;
+}
 
 .music-note{
 transform:scale(.8);
 }
 
-.stream{
-opacity:.8;
 }
-
-}
+```
