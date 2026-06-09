@@ -1,1 +1,102 @@
-/* SADAM VOX Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #0a0a0a;
+    color: #ffffff;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 8%;
+    border-bottom: 1px solid #222;
+}
+
+.logo {
+    font-size: 28px;
+    font-weight: bold;
+    color: gold;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 20px;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: gold;
+}
+
+.hero {
+    text-align: center;
+    padding: 120px 20px;
+}
+
+.hero h1 {
+    font-size: 52px;
+    color: gold;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 20px;
+    color: #cccccc;
+    max-width: 700px;
+    margin: auto;
+    margin-bottom: 40px;
+}
+
+.hero button {
+    background: gold;
+    color: black;
+    border: none;
+    padding: 15px 35px;
+    font-size: 18px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.hero button:hover {
+    transform: scale(1.05);
+}
+
+.features {
+    padding: 80px 8%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+}
+
+.card {
+    background: #111;
+    border: 1px solid #333;
+    border-radius: 15px;
+    padding: 25px;
+    transition: 0.3s;
+}
+
+.card:hover {
+    border-color: gold;
+    transform: translateY(-5px);
+}
+
+.card h3 {
+    color: gold;
+    margin-bottom: 15px;
+}
+
+footer {
+    text-align: center;
+    padding: 40px;
+    border-top: 1px solid #222;
+    color: #888;
+}
