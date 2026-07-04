@@ -1,1 +1,1 @@
-console.log("SADAM VOX UI loaded");
+console.log("SADAM VOX READY");
