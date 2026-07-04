@@ -1,8 +1,8 @@
 body {
   margin: 0;
   font-family: Arial, sans-serif;
-  background: #0b0b0b;
-  color: white;
+  background: radial-gradient(circle at top, #1a1208, #050505);
+  color: #f5d37a;
 }
 
 #app {
@@ -13,8 +13,9 @@ body {
 /* Sidebar */
 #sidebar {
   width: 260px;
-  background: #111;
-  border-left: 1px solid #222;
+  background: linear-gradient(180deg, #0e0e0e, #1a1208);
+  border-left: 1px solid #3a2a10;
+  padding: 15px;
 }
 
 /* Main */
@@ -24,13 +25,21 @@ body {
   flex-direction: column;
 }
 
+/* Topbar */
 #topbar {
   height: 60px;
-  background: #151515;
-  border-bottom: 1px solid #222;
+  background: linear-gradient(90deg, #1a1208, #0e0e0e);
+  border-bottom: 1px solid #3a2a10;
+  display: flex;
+  align-items: center;
+  padding: 0 15px;
+  font-weight: bold;
+  letter-spacing: 1px;
 }
 
+/* Content */
 #content {
   flex: 1;
   padding: 20px;
+  background: radial-gradient(circle at center, #0b0b0b, #050505);
 }
