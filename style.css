@@ -1,45 +1,74 @@
 body {
   margin: 0;
-  font-family: Arial, sans-serif;
-  background: radial-gradient(circle at top, #1a1208, #050505);
+  font-family: Arial;
+  background: #0a0a0a;
   color: #f5d37a;
 }
 
-#app {
+.app {
   display: flex;
   height: 100vh;
 }
 
 /* Sidebar */
-#sidebar {
+.sidebar {
   width: 260px;
-  background: linear-gradient(180deg, #0e0e0e, #1a1208);
+  background: linear-gradient(180deg, #111, #1a1208);
   border-left: 1px solid #3a2a10;
   padding: 15px;
 }
 
+.logo {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: gold;
+}
+
+.nav button {
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 10px;
+  background: #1a1208;
+  border: 1px solid #3a2a10;
+  color: #f5d37a;
+  cursor: pointer;
+}
+
 /* Main */
-#main {
+.main {
   flex: 1;
   display: flex;
   flex-direction: column;
 }
 
-/* Topbar */
-#topbar {
-  height: 60px;
-  background: linear-gradient(90deg, #1a1208, #0e0e0e);
+.topbar {
+  padding: 15px;
+  background: #111;
   border-bottom: 1px solid #3a2a10;
-  display: flex;
-  align-items: center;
-  padding: 0 15px;
-  font-weight: bold;
-  letter-spacing: 1px;
 }
 
 /* Content */
-#content {
+.content {
   flex: 1;
   padding: 20px;
-  background: radial-gradient(circle at center, #0b0b0b, #050505);
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 15px;
+}
+
+.card {
+  background: linear-gradient(145deg, #1a1208, #0a0a0a);
+  border: 1px solid #3a2a10;
+  padding: 20px;
+  border-radius: 12px;
+  transition: 0.3s;
+}
+
+.card:hover {
+  border-color: gold;
+  transform: translateY(-5px);
 }
