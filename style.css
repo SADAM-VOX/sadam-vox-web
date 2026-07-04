@@ -1,318 +1,36 @@
-/* =================================
-   SADAM VOX - GOLD MUSIC BACKGROUND
-   ================================= */
-
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #0b0b0b;
+  color: white;
 }
 
-html,
-body{
-width:100%;
-height:100%;
-overflow:hidden;
-background:#000;
+#app {
+  display: flex;
+  height: 100vh;
 }
 
-body{
-position:relative;
-background:#000;
+/* Sidebar */
+#sidebar {
+  width: 260px;
+  background: #111;
+  border-left: 1px solid #222;
 }
 
-/* =================================
-   MAIN CONTAINER
-   ================================= */
-
-.gold-frame{
-position:relative;
-width:100%;
-height:100vh;
-overflow:hidden;
-background:#000;
+/* Main */
+#main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
 }
 
-.background-layer{
-position:absolute;
-inset:0;
-overflow:hidden;
+#topbar {
+  height: 60px;
+  background: #151515;
+  border-bottom: 1px solid #222;
 }
 
-/* =================================
-   GOLD DUST
-   ================================= */
-
-body::before{
-content:"";
-position:absolute;
-inset:0;
-
-background-image:
-radial-gradient(#ffd56d 1px,transparent 1px),
-radial-gradient(#c99226 2px,transparent 2px),
-radial-gradient(#ffe08f 1px,transparent 1px);
-
-background-size:
-160px 160px,
-280px 280px,
-420px 420px;
-
-opacity:.35;
-
-animation:dustMove 30s linear infinite;
-
-pointer-events:none;
-}
-
-@keyframes dustMove{
-from{
-transform:translateY(0);
-}
-to{
-transform:translateY(-120px);
-}
-}
-
-/* =================================
-   GOLD FLOW 1
-   ================================= */
-
-.wave1{
-position:absolute;
-width:180%;
-height:500px;
-
-top:5%;
-left:-40%;
-
-border-radius:50%;
-
-border:3px solid rgba(255,204,90,.9);
-
-filter:
-blur(8px)
-drop-shadow(0 0 20px #ffbf47)
-drop-shadow(0 0 40px #ffbf47);
-
-transform:rotate(15deg);
-opacity:.8;
-}
-
-/* =================================
-   GOLD FLOW 2
-   ================================= */
-
-.wave2{
-position:absolute;
-width:170%;
-height:550px;
-
-top:35%;
-left:-35%;
-
-border-radius:50%;
-
-border:3px solid rgba(255,185,60,.85);
-
-filter:
-blur(8px)
-drop-shadow(0 0 20px #ffbf47)
-drop-shadow(0 0 40px #ffbf47);
-
-transform:rotate(-12deg);
-
-opacity:.7;
-}
-
-/* =================================
-   GOLD FLOW 3
-   ================================= */
-
-.wave3{
-position:absolute;
-width:180%;
-height:600px;
-
-bottom:-10%;
-left:-30%;
-
-border-radius:50%;
-
-border:3px solid rgba(255,210,100,.85);
-
-filter:
-blur(8px)
-drop-shadow(0 0 20px #ffcf63)
-drop-shadow(0 0 50px #ffcf63);
-
-transform:rotate(12deg);
-
-opacity:.75;
-}
-
-/* =================================
-   GOLD GLOW CLOUDS
-   ================================= */
-
-.background-layer::before{
-content:"";
-
-position:absolute;
-inset:0;
-
-background:
-
-radial-gradient(circle at 20% 35%,
-rgba(255,190,60,.12),
-transparent 30%),
-
-radial-gradient(circle at 70% 30%,
-rgba(255,190,60,.10),
-transparent 35%),
-
-radial-gradient(circle at 60% 75%,
-rgba(255,190,60,.08),
-transparent 30%);
-
-filter:blur(80px);
-}
-
-/* =================================
-   MUSIC NOTES
-   ================================= */
-
-.music-note{
-position:absolute;
-
-color:#e2b14a;
-
-text-shadow:
-0 0 10px #ffcf63,
-0 0 20px #ffcf63,
-0 0 50px #ffcf63;
-
-animation:floatNote 8s ease-in-out infinite;
-}
-
-.note1{
-top:20%;
-left:10%;
-font-size:70px;
-}
-
-.note2{
-top:22%;
-right:15%;
-font-size:70px;
-}
-
-.note3{
-bottom:18%;
-left:28%;
-font-size:80px;
-}
-
-.note4{
-top:55%;
-right:22%;
-font-size:60px;
-}
-
-.note5{
-bottom:10%;
-right:12%;
-font-size:55px;
-}
-
-@keyframes floatNote{
-
-0%{
-transform:translateY(0);
-}
-
-50%{
-transform:translateY(-20px);
-}
-
-100%{
-transform:translateY(0);
-}
-}
-
-/* =================================
-   PARTICLES
-   ================================= */
-
-.particle{
-position:absolute;
-border-radius:50%;
-
-background:#ffd56d;
-
-box-shadow:
-0 0 10px #ffd56d,
-0 0 20px #ffd56d,
-0 0 40px #ffd56d;
-}
-
-.p1{
-width:12px;
-height:12px;
-top:15%;
-left:20%;
-}
-
-.p2{
-width:12px;
-height:12px;
-top:30%;
-right:22%;
-}
-
-.p3{
-width:10px;
-height:10px;
-top:60%;
-left:15%;
-}
-
-.p4{
-width:12px;
-height:12px;
-bottom:18%;
-left:42%;
-}
-
-.p5{
-width:12px;
-height:12px;
-bottom:22%;
-right:18%;
-}
-
-.p6{
-width:10px;
-height:10px;
-top:72%;
-right:30%;
-}
-
-/* =================================
-   DESKTOP
-   ================================= */
-
-@media(min-width:1200px){
-
-.note1{font-size:120px;}
-.note2{font-size:120px;}
-.note3{font-size:130px;}
-.note4{font-size:110px;}
-.note5{font-size:90px;}
-
-.wave1,
-.wave2,
-.wave3{
-border-width:4px;
-}
+#content {
+  flex: 1;
+  padding: 20px;
 }
