@@ -1,22 +1,65 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>SADAM VOX</title>
-  <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SADAM VOX</title>
+<link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-  <div id="app">
-    <aside id="sidebar">Sidebar</aside>
+<div class="app">
 
-    <main id="main">
-      <header id="topbar">Top Bar</header>
-      <section id="content">Content Area</section>
-    </main>
-  </div>
+  <aside class="sidebar">
+    <div class="logo">SADAM VOX</div>
 
-  <script src="app.js"></script>
+    <div class="nav">
+      <button>🎤 استنساخ الصوت</button>
+      <button>🎧 تنظيف الصوت</button>
+      <button>🎵 توليد موسيقى</button>
+      <button>🎚️ ماسترنج</button>
+    </div>
+  </aside>
+
+  <main class="main">
+
+    <header class="topbar">
+      <h1>Studio Control Panel</h1>
+    </header>
+
+    <section class="content">
+
+      <div class="cards">
+
+        <div class="card">
+          <h3>Voice Clone</h3>
+          <p>استنساخ الصوت بدقة عالية</p>
+        </div>
+
+        <div class="card">
+          <h3>Voice Cleaner</h3>
+          <p>تنقية وإزالة الضوضاء</p>
+        </div>
+
+        <div class="card">
+          <h3>Music AI</h3>
+          <p>توليد موسيقى احترافية</p>
+        </div>
+
+        <div class="card">
+          <h3>Mastering</h3>
+          <p>هندسة صوت نهائية</p>
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+</div>
+
+<script src="app.js"></script>
 </body>
 </html>
