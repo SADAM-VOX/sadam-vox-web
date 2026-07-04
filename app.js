@@ -1,1 +1,1 @@
-console.log("SADAM VOX FOUNDATION LOADED");
+console.log("SADAM VOX UI loaded");
