@@ -2,42 +2,26 @@
 <html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-        /* تعريف التدرج الذهبي الفاخر */
-        .gold-gradient {
-            background: linear-gradient(145deg, #d4af37, #aa8920, #d4af37);
-        }
-        .bg-gold-dark {
-            background: radial-gradient(circle, #2a2210 0%, #0d0b08 100%);
-        }
-        .gold-border {
-            border: 1px solid #d4af37;
-            box-shadow: 0 0 15px rgba(212, 175, 55, 0.3);
-        }
-    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SADAM VOX AI STUDIO</title>
+    <link rel="stylesheet" href="style.css">
 </head>
-<body class="bg-gold-dark text-yellow-600 font-sans min-h-screen p-4">
+<body>
 
-    <div class="max-w-7xl mx-auto gold-border p-6 rounded-xl">
-        
-        <header class="text-center mb-10">
-            <h1 class="text-4xl font-bold text-yellow-500 uppercase tracking-widest">SADAM VOX</h1>
-            <p class="text-sm">AI MUSIC STUDIO</p>
+    <div class="main-container">
+        <header class="text-center">
+            <h1>SADAM VOX AI STUDIO</h1>
         </header>
 
-        <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
-            <div class="col-span-1 space-y-4">
-                <button class="w-full py-3 gold-gradient text-black font-bold rounded-lg hover:scale-105 transition">استنساخ الصوت</button>
-                <button class="w-full py-3 gold-border rounded-lg hover:bg-yellow-900 transition">تنظيف الصوت</button>
-                </div>
+        <div class="content-wrapper">
+            <aside class="sidebar">
+                <button class="btn-royal-gold">استنساخ الصوت</button>
+                <button class="btn-royal-gold">تنظيف الصوت</button>
+            </aside>
 
-            <div class="col-span-3 grid grid-cols-2 gap-4">
-                <div class="gold-border p-8 rounded-xl bg-black/40 text-center">
-                    <h2 class="text-2xl mb-4">VOICE CLONE</h2>
-                    <button class="px-6 py-2 gold-gradient text-black rounded font-bold">START NOW</button>
-                </div>
-                </div>
+            <main class="dashboard gold-glass-panel">
+                <h2>مرحباً بك في استوديو SADAM VOX</h2>
+            </main>
         </div>
     </div>
 
